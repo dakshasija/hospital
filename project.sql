@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2016 at 11:19 AM
+-- Generation Time: Mar 28, 2016 at 09:04 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -84,7 +84,9 @@ INSERT INTO `patient` (`name`, `age`, `gender`, `address`, `id`) VALUES
 ('6261651', 0, '12', 'male', 0),
 ('123', 0, '21', 'male', 0),
 ('amit', 21, 'male', 'daskdnskad', 123),
-('amit', 21, 'male', 'daskdnskad', 123);
+('amit', 21, 'male', 'daskdnskad', 123),
+('', 0, '', '', 0),
+('', 0, '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -107,7 +109,9 @@ CREATE TABLE IF NOT EXISTS `saturday` (
 --
 
 INSERT INTO `saturday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
-(123, 'dsadsad', 15, 15, 'sadasd', '14:04:00', '11:58:00');
+(123, 'dsadsad', 15, 15, 'sadasd', '14:04:00', '11:58:00'),
+(149, 'nitesh', 20, 20, 'opthalmologist', '09:00:00', '08:23:00'),
+(149, 'nitesh', 20, 20, 'opthalmologist', '09:00:00', '08:23:00');
 
 -- --------------------------------------------------------
 
@@ -135,6 +139,56 @@ INSERT INTO `sunday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `ou
 (123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
 (0, '', 0, 0, '', '00:00:00', '00:00:00'),
 (0, '', 0, 0, '', '00:00:00', '00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `symptoms`
+--
+
+CREATE TABLE IF NOT EXISTS `symptoms` (
+  `sym` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `symptoms`
+--
+
+INSERT INTO `symptoms` (`sym`) VALUES
+('heart problem'),
+('blood vessels problem'),
+('illness'),
+('injuries'),
+('headache'),
+('stomach pain'),
+('diabetes'),
+('hormone imbalance'),
+('thyroid disease'),
+('endocrine disorder'),
+('digestion problem'),
+('blood problem'),
+('bone marrow problem'),
+('liver problem'),
+('genetic disease'),
+('cancer'),
+('tumor'),
+('radiation effect'),
+('kidney problem'),
+('brain problem'),
+('spine problem'),
+('nerves'),
+('muscles problem'),
+('nervous system problem'),
+('female reproductive part problem'),
+('pregnancy'),
+('foot and ankle problem'),
+('lungs problem'),
+('joints problem'),
+('sleep disorder'),
+('female urological problem'),
+('eye problem'),
+('ear problem'),
+('nose problem');
 
 -- --------------------------------------------------------
 
@@ -187,58 +241,6 @@ INSERT INTO `tuesday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `o
 -- --------------------------------------------------------
 
 --
--- Table structure for table `types`
---
-
-CREATE TABLE IF NOT EXISTS `types` (
-  `doc_types` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `types`
---
-
-INSERT INTO `types` (`doc_types`) VALUES
-('cardiologist'),
-('emergency'),
-('endocrinologist'),
-('gastroenterologist'),
-('hematologist'),
-('hepatologist'),
-('medical geneticst'),
-('oncologist'),
-('nephrologist'),
-('neurologist'),
-('gynecologist'),
-('urogynecologist'),
-('endocrinologist'),
-('gastroenterologist'),
-('hematologist'),
-('hepatologist'),
-('medical geneticst'),
-('oncologist'),
-('nephrologist'),
-('neurologist'),
-('gynecologist'),
-('urogynecologist'),
-('opthalmologist'),
-('otolarygologist'),
-('perinatologist'),
-('podiatrist'),
-('pulmologist'),
-('opthalmologist'),
-('otolarygologist'),
-('perinatologist'),
-('podiatrist'),
-('pulmologist'),
-('pheumatologist'),
-('sleep doctor'),
-('pheumatologist'),
-('sleep doctor');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `wednesday`
 --
 
@@ -259,7 +261,9 @@ CREATE TABLE IF NOT EXISTS `wednesday` (
 INSERT INTO `wednesday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
 (123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
 (123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
-(123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00');
+(123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
+(23, 'daksh', 15, 15, 'cardiologist', '05:00:00', '11:00:00'),
+(23, 'daksh', 15, 15, 'cardiologist', '05:00:00', '11:00:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
