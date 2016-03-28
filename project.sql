@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2016 at 09:04 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Generation Time: Mar 28, 2016 at 03:30 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,25 @@ SET time_zone = "+00:00";
 --
 -- Database: `project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor`
+--
+
+CREATE TABLE IF NOT EXISTS `doctor` (
+  `id` int(100) NOT NULL,
+  `pass` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `doctor`
+--
+
+INSERT INTO `doctor` (`id`, `pass`) VALUES
+(123, 'abc'),
+(456, 'def');
 
 -- --------------------------------------------------------
 
@@ -68,25 +87,47 @@ INSERT INTO `monday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `ou
 --
 
 CREATE TABLE IF NOT EXISTS `patient` (
-  `name` varchar(100) NOT NULL,
+  `pname` varchar(100) NOT NULL,
   `age` int(11) NOT NULL,
   `gender` varchar(10) NOT NULL,
   `address` varchar(300) NOT NULL,
-  `id` int(11) NOT NULL
+  `pid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `patient`
 --
 
-INSERT INTO `patient` (`name`, `age`, `gender`, `address`, `id`) VALUES
+INSERT INTO `patient` (`pname`, `age`, `gender`, `address`, `pid`) VALUES
 ('6261651', 12, '12', 'male', 0),
 ('6261651', 0, '12', 'male', 0),
 ('123', 0, '21', 'male', 0),
 ('amit', 21, 'male', 'daskdnskad', 123),
 ('amit', 21, 'male', 'daskdnskad', 123),
 ('', 0, '', '', 0),
-('', 0, '', '', 0);
+('', 0, '', '', 0),
+('abcd', 12, 'male', 'aksjdkj', 1234),
+('defgh', 25, 'female', 'klajskfljaslkjdflkj', 6547);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `register`
+--
+
+CREATE TABLE IF NOT EXISTS `register` (
+  `did` int(100) NOT NULL,
+  `day1` varchar(100) NOT NULL,
+  `pid` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `register`
+--
+
+INSERT INTO `register` (`did`, `day1`, `pid`) VALUES
+(123, 'Monday', '1234'),
+(456, 'Tuesday', '6547');
 
 -- --------------------------------------------------------
 
