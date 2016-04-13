@@ -1,6 +1,3 @@
-
-
-
 <?php
 $conn = new mysqli("localhost","root", "","project");
 //if ($conn->connect_error) {
@@ -11,7 +8,7 @@ $id=$_POST["username"];
 $pass=$_POST["password"];
 $sql = "SELECT id, pass FROM doctor";
 $result = $conn->query($sql);
-
+$flag=0;
 if ($result->num_rows > 0) {
    
     while($row = $result->fetch_assoc()) {
@@ -19,6 +16,8 @@ if ($result->num_rows > 0) {
 		{
 				
 	$day= date("l");
+	//echo $day;
+	
 	$sql = "SELECT pid FROM  register where  did='$id' and day1='$day'";
 	
 $result = $conn->query($sql);
@@ -35,8 +34,13 @@ if ($result->num_rows > 0) {
            
 			   
 	}}
+	$flag=1;
 		}
-	}}
+	}
+	
+	if($flag==0)
+		echo "INVALID USER PLEASE TRY AGAIN";
+	}
 
 
 
