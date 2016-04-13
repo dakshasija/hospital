@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 28, 2016 at 03:30 PM
+-- Generation Time: Apr 13, 2016 at 07:27 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -54,6 +54,13 @@ CREATE TABLE IF NOT EXISTS `friday` (
   `intime` time NOT NULL,
   `outtime` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `friday`
+--
+
+INSERT INTO `friday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
+(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
 
 -- --------------------------------------------------------
 
@@ -126,8 +133,10 @@ CREATE TABLE IF NOT EXISTS `register` (
 --
 
 INSERT INTO `register` (`did`, `day1`, `pid`) VALUES
-(123, 'Monday', '1234'),
-(456, 'Tuesday', '6547');
+(456, 'Tuesday', '6547'),
+(123, 'Wednesday', '1234'),
+(123, 'Monday', '6547'),
+(123, 'Wednesday', '6547');
 
 -- --------------------------------------------------------
 
@@ -152,7 +161,8 @@ CREATE TABLE IF NOT EXISTS `saturday` (
 INSERT INTO `saturday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
 (123, 'dsadsad', 15, 15, 'sadasd', '14:04:00', '11:58:00'),
 (149, 'nitesh', 20, 20, 'opthalmologist', '09:00:00', '08:23:00'),
-(149, 'nitesh', 20, 20, 'opthalmologist', '09:00:00', '08:23:00');
+(149, 'nitesh', 20, 20, 'opthalmologist', '09:00:00', '08:23:00'),
+(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
 
 -- --------------------------------------------------------
 
@@ -253,7 +263,9 @@ CREATE TABLE IF NOT EXISTS `thursday` (
 
 INSERT INTO `thursday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
 (123, 'dsadsad', 15, 15, 'sadasd', '14:04:00', '11:58:00'),
-(0, '', 0, 0, '', '00:00:00', '00:00:00');
+(0, '', 0, 0, '', '00:00:00', '00:00:00'),
+(5461, 'ksdjv', 85, 8, 'kdkkjvskdjvknsdkn', '18:06:00', '06:16:00'),
+(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
 
 -- --------------------------------------------------------
 
@@ -277,7 +289,10 @@ CREATE TABLE IF NOT EXISTS `tuesday` (
 
 INSERT INTO `tuesday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
 (123, 'dsadsad', 15, 15, 'sadasd', '14:04:00', '11:58:00'),
-(0, '', 0, 0, '', '00:00:00', '00:00:00');
+(0, '', 0, 0, '', '00:00:00', '00:00:00'),
+(546, 'Niteshkumar', 54, 45, 'ortho', '00:56:46', '00:54:56'),
+(5461, 'ksdjv', 85, 8, 'kdkkjvskdjvknsdkn', '18:06:00', '06:16:00'),
+(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
 
 -- --------------------------------------------------------
 
@@ -304,7 +319,9 @@ INSERT INTO `wednesday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, 
 (123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
 (123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
 (23, 'daksh', 15, 15, 'cardiologist', '05:00:00', '11:00:00'),
-(23, 'daksh', 15, 15, 'cardiologist', '05:00:00', '11:00:00');
+(23, 'daksh', 15, 15, 'cardiologist', '05:00:00', '11:00:00'),
+(5461, 'ksdjv', 85, 8, 'kdkkjvskdjvknsdkn', '18:06:00', '06:16:00'),
+(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
