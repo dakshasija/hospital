@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2016 at 07:27 PM
+-- Generation Time: Apr 14, 2016 at 02:29 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -23,11 +23,35 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `docinfo`
+--
+
+CREATE TABLE IF NOT EXISTS `docinfo` (
+  `did` varchar(100) NOT NULL,
+  `dname` varchar(100) NOT NULL,
+  `tseats` int(100) NOT NULL,
+  `aseats` int(100) NOT NULL,
+  `type1` varchar(100) NOT NULL,
+  `intime` time NOT NULL,
+  `outtime` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `docinfo`
+--
+
+INSERT INTO `docinfo` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
+('1234', 'Rohit Sharma', 25, 25, 'chutalogist', '00:00:00', '00:00:00'),
+('1234', 'Rohit Sharma', 25, 25, 'chutalogist', '09:00:00', '00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `doctor`
 --
 
 CREATE TABLE IF NOT EXISTS `doctor` (
-  `id` int(100) NOT NULL,
+  `id` varchar(100) NOT NULL,
   `pass` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -36,8 +60,8 @@ CREATE TABLE IF NOT EXISTS `doctor` (
 --
 
 INSERT INTO `doctor` (`id`, `pass`) VALUES
-(123, 'abc'),
-(456, 'def');
+('123', 'abc'),
+('456', 'def');
 
 -- --------------------------------------------------------
 
@@ -46,7 +70,7 @@ INSERT INTO `doctor` (`id`, `pass`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `friday` (
-  `did` int(100) NOT NULL,
+  `did` varchar(100) NOT NULL,
   `dname` varchar(100) NOT NULL,
   `tseats` int(11) NOT NULL,
   `aseats` int(11) NOT NULL,
@@ -60,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `friday` (
 --
 
 INSERT INTO `friday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
-(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
+('46546546', 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
 
 -- --------------------------------------------------------
 
@@ -85,7 +109,9 @@ CREATE TABLE IF NOT EXISTS `monday` (
 INSERT INTO `monday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `outtime`) VALUES
 (123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
 (123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
-(123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00');
+(123, 'amit', 15, 15, 'ortnfasf', '14:04:00', '11:58:00'),
+(1234, 'Rohit Sharma', 25, 25, 'chutalogist', '09:00:00', '00:00:00'),
+(1234, 'Rohit Sharma', 25, 25, 'chutalogist', '09:00:00', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -114,7 +140,8 @@ INSERT INTO `patient` (`pname`, `age`, `gender`, `address`, `pid`) VALUES
 ('', 0, '', '', 0),
 ('', 0, '', '', 0),
 ('abcd', 12, 'male', 'aksjdkj', 1234),
-('defgh', 25, 'female', 'klajskfljaslkjdflkj', 6547);
+('defgh', 25, 'female', 'klajskfljaslkjdflkj', 6547),
+('ANSHI', 24, 'on', 'kknkn', 5461);
 
 -- --------------------------------------------------------
 
@@ -244,6 +271,16 @@ INSERT INTO `symptoms` (`sym`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `temp`
+--
+
+CREATE TABLE IF NOT EXISTS `temp` (
+  `id` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `thursday`
 --
 
@@ -292,7 +329,9 @@ INSERT INTO `tuesday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, `o
 (0, '', 0, 0, '', '00:00:00', '00:00:00'),
 (546, 'Niteshkumar', 54, 45, 'ortho', '00:56:46', '00:54:56'),
 (5461, 'ksdjv', 85, 8, 'kdkkjvskdjvknsdkn', '18:06:00', '06:16:00'),
-(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
+(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00'),
+(1234, 'Rohit Sharma', 25, 25, 'chutalogist', '09:00:00', '00:00:00'),
+(1234, 'Rohit Sharma', 25, 25, 'chutalogist', '09:00:00', '00:00:00');
 
 -- --------------------------------------------------------
 
@@ -321,7 +360,9 @@ INSERT INTO `wednesday` (`did`, `dname`, `tseats`, `aseats`, `type1`, `intime`, 
 (23, 'daksh', 15, 15, 'cardiologist', '05:00:00', '11:00:00'),
 (23, 'daksh', 15, 15, 'cardiologist', '05:00:00', '11:00:00'),
 (5461, 'ksdjv', 85, 8, 'kdkkjvskdjvknsdkn', '18:06:00', '06:16:00'),
-(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00');
+(46546546, 'lsdm;vlm', 4, 4, 'mds;lm', '05:04:00', '17:45:00'),
+(1234, 'Rohit Sharma', 25, 25, 'chutalogist', '09:00:00', '00:00:00'),
+(1234, 'Rohit Sharma', 25, 25, 'chutalogist', '09:00:00', '00:00:00');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
